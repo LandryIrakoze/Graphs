@@ -141,11 +141,12 @@ class Graph:
                     # IF SO, RETURN THE PATH
                     return p
                 # Enqueue A PATH TO all it's neighbors
-                # for neighbor in self.get_neighbors():
-                #     # MAKE A COPY OF THE PATH
-                #     copy = 
-                #     # ENQUEUE THE COPY
-                #     q.enqueue(copy)
+                for neighbor in self.get_neighbors(v):
+                    # MAKE A COPY OF THE PATH
+                    path_copy = p.copy()
+                    path_copy.append(neighbor)
+                    # ENQUEUE THE COPY
+                    q.enqueue(path_copy)
 
     def dfs(self, starting_vertex, destination_vertex):
         """
